@@ -62,6 +62,7 @@ function clearwordleSolutionEl() {
 
 function clearInputFieldEl() {
     inputFieldEl.value = ""
+    guessNumberEl.value= ""
 }
 
 function appendItemTowordleSolutionEl(item,itemIDInDB) {
