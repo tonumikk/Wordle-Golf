@@ -52,6 +52,11 @@ onValue(wordleSolutionInDB, function(snapshot) {
 })
 
 function clearwordleSolutionEl() {
+    eagleListEl.innerHTML = ""
+    birdieListEl.innerHTML = ""
+    parListEl.innerHTML = ""
+    bogeyListEl.innerHTML = ""
+    dblbogeyListEl.innerHTML = ""
     wordleSolutionEl.innerHTML = ""
 }
 
