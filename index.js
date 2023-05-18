@@ -37,7 +37,7 @@ onValue(wordleSolutionInDB, function(snapshot) {
             let currentItem = itemsArray[i]
             let currentItemID = currentItem[0]
             let currentItemValue = currentItem[1] //Object - word: ... guesses:...
-            let wordArray = Object.entries(currentItem) //[[guesses,5][word,Shone]]
+            let wordArray = Object.entries(currentItem[1]) //[[guesses,5][word,Shone]]
             let wordArrayValue = wordArray[1][1] +": "+wordArray[0][1]
 
             appendItemTowordleSolutionEl(wordArray)
