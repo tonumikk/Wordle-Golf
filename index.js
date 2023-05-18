@@ -36,9 +36,8 @@ onValue(wordleSolutionInDB, function(snapshot) {
         for (let i = 0; i < itemsArray.length; i++) {
             let currentItem = itemsArray[i]
             let currentItemID = currentItem[0]
-            let currentItemValue = currentItem[1] //Object - word: ... guesses:...
-            let wordArray = Object.entries(currentItem[1]) //[[guesses,5][word,Shone]]
-            let wordArrayValue = wordArray[1][1] +": "+wordArray[0][1]
+            let currentItemValue = currentItem[1] 
+            let wordArray = Object.values(currentItem[1]) 
 
             appendItemTowordleSolutionEl(wordArray)
         }    
@@ -61,7 +60,7 @@ function appendItemTowordleSolutionEl(item) {
     
     let newEl = document.createElement("li")
     
-    newEl.textContent = itemValue
+    newEl.textContent = itemValue + ": " + itemID
     
     newEl.addEventListener("click", function() {
         let exactLocationOfItemInDB = ref(database, `wordleSolution/${itemID}`)
