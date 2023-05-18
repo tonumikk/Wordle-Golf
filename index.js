@@ -40,7 +40,7 @@ onValue(wordleSolutionInDB, function(snapshot) {
             let wordArray = Object.entries(currentItem[1]) //[[guesses,5][word,Shone]]
             let wordArrayValue = wordArray[1][1] +": "+wordArray[0][1]
 
-            appendItemTowordleSolutionEl(wordArrayValue)
+            appendItemTowordleSolutionEl(wordArray)
         }    
     } else {
         wordleSolutionEl.innerHTML = "No items here... yet"
