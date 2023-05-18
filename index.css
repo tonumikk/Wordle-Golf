@@ -30,6 +30,11 @@ input {
     font-family: 'Rubik', sans-serif;
     margin: 10px 0;
 }
+#guess-number{
+    margin-top:10px;
+    margin-left:60px;
+    margin-right:60px;
+}
 
 button {
     color: #FDFDFD;

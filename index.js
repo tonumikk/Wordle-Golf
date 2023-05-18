@@ -10,11 +10,17 @@ const database = getDatabase(app)
 const wordleSolutionInDB = ref(database, "wordleSolution")
 
 const inputFieldEl = document.getElementById("input-field")
+const guessNumberEl = document.getElementById("guess-number")
 const addButtonEl = document.getElementById("add-button")
 const wordleSolutionEl = document.getElementById("shopping-list")
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
+    let guessNumber = guessNumberEl.value
+    let wordleSolution = {
+        word: inputValue,
+        guesses: guessNumber
+    }
     
     push(wordleSolutionInDB, inputValue)
     
