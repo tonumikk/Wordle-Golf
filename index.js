@@ -36,9 +36,11 @@ onValue(wordleSolutionInDB, function(snapshot) {
         for (let i = 0; i < itemsArray.length; i++) {
             let currentItem = itemsArray[i]
             let currentItemID = currentItem[0]
-            let currentItemValue = currentItem[1]
+            let currentItemValue = currentItem[1] //Object - word: ... guesses:...
+            let wordArray = Object.entries(currentItem[1])
+
             
-            appendItemTowordleSolutionEl(currentItem)
+            appendItemTowordleSolutionEl(wordArray)
         }    
     } else {
         wordleSolutionEl.innerHTML = "No items here... yet"
