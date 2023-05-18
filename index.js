@@ -44,7 +44,7 @@ onValue(wordleSolutionInDB, function(snapshot) {
             let currentItemValue = currentItem[1] 
             let wordArray = Object.values(currentItem[1]) 
 
-            appendItemTowordleSolutionEl(wordArray)
+            appendItemTowordleSolutionEl(wordArray,currentItemID)
         }    
     } else {
         wordleSolutionEl.innerHTML = "No items here... yet"
@@ -64,7 +64,7 @@ function clearInputFieldEl() {
     inputFieldEl.value = ""
 }
 
-function appendItemTowordleSolutionEl(item) {
+function appendItemTowordleSolutionEl(item,itemIDInDB) {
     let itemID = item[0]
     let itemValue = item[1]
     
@@ -73,7 +73,7 @@ function appendItemTowordleSolutionEl(item) {
     newEl.textContent = itemValue
     
     newEl.addEventListener("click", function() {
-        let exactLocationOfItemInDB = ref(database, `wordleSolution/${itemID}`)
+        let exactLocationOfItemInDB = ref(database, `wordleSolution/${itemIDInDB}`)
         
         remove(exactLocationOfItemInDB)
     })
