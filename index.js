@@ -22,7 +22,7 @@ addButtonEl.addEventListener("click", function() {
         guesses: guessNumber
     }
     
-    push(wordleSolutionInDB, inputValue)
+    push(wordleSolutionInDB, wordleSolution)
     
     clearInputFieldEl()
 })
