@@ -13,6 +13,11 @@ const inputFieldEl = document.getElementById("input-field")
 const guessNumberEl = document.getElementById("guess-number")
 const addButtonEl = document.getElementById("add-button")
 const wordleSolutionEl = document.getElementById("shopping-list")
+const eagleListEl = document.getElementById("eagle-list")
+const birdieListEl = document.getElementById("birdie-list")
+const parListEl = document.getElementById("par-list")
+const bogeyListEl = document.getElementById("bogey-list")
+const dblbogeyListEl = document.getElementById("dblbogey-list")
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
@@ -60,7 +65,7 @@ function appendItemTowordleSolutionEl(item) {
     
     let newEl = document.createElement("li")
     
-    newEl.textContent = itemValue + ": " + itemID
+    newEl.textContent = itemValue
     
     newEl.addEventListener("click", function() {
         let exactLocationOfItemInDB = ref(database, `wordleSolution/${itemID}`)
@@ -68,5 +73,17 @@ function appendItemTowordleSolutionEl(item) {
         remove(exactLocationOfItemInDB)
     })
     
-    wordleSolutionEl.append(newEl)
+    if(itemID === "2"){
+        eagleListEl.append(newEl)
+    }else if (itemID === "3"){
+        birdieListEl.append(newEl)
+    }else if (itemID === "4"){
+        parListEl.append(newEl)
+    }else if (itemID === "5"){
+        bogeyListEl.append(newEl)
+    }else if (itemID === "6"){
+        dblbogeyListEl.append(newEl)
+    }else{
+    wordleSolutionEl.append(newEl + "Hole in one!")
+    }
 }
