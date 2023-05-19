@@ -49,7 +49,7 @@ onValue(wordleSolutionInDB, function(snapshot) {
             for(let j = 0;j < wordArrayValues.length; j++){
                 golfScore += wordArrayValues[j]
             }
-            golfScore(golfScore)
+            addGolfScoreEl(golfScore)
             appendItemTowordleSolutionEl(wordArray,currentItemID)
         }    
     } else {
@@ -69,6 +69,10 @@ function clearwordleSolutionEl() {
 function clearInputFieldEl() {
     inputFieldEl.value = ""
     guessNumberEl.value= ""
+}
+
+function addGolfScoreEl(score) {
+    golfScoreEl.innerHTML = `Golf score: ${score}` 
 }
 
 function appendItemTowordleSolutionEl(item,itemIDInDB) {
@@ -99,8 +103,4 @@ function appendItemTowordleSolutionEl(item,itemIDInDB) {
     wordleSolutionEl.append(newEl)
     }
     
-}
-
-function golfScore(score){
-    golfScoreEl.innerHTML = `Golf score: ${score}` 
 }
