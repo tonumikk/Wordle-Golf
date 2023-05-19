@@ -73,7 +73,7 @@ function clearInputFieldEl() {
 
 function appendItemTowordleSolutionEl(item,itemIDInDB) {
     let itemID = item[0]
-    let itemValue = item[1]
+    let itemValue = item[2]
     
     let newEl = document.createElement("li")
     
