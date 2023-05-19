@@ -90,6 +90,6 @@ function appendItemTowordleSolutionEl(item,itemIDInDB) {
     }else if (itemID === "6"){
         dblbogeyListEl.append(newEl)
     }else{
-    wordleSolutionEl.append(newEl + "Hole in one!")
+    wordleSolutionEl.append(newEl)
     }
 }
