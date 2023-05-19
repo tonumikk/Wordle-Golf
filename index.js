@@ -23,9 +23,26 @@ const golfScoreEl = document.getElementById("golf-score")
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
     let guessNumber = guessNumberEl.value
+    let golfScore = 0
+    if (guessNumber === 1){
+        golfScore = -3
+    }else if(guessNumber === 2){
+        golfScore = -2
+    }else if(guessNumber === 3){
+        golfScore = -1
+    }else if(guessNumber === 4){
+        golfScore = 0
+    }else if(guessNumber === 5){
+        golfScore = 1
+    }else if(guessNumber === 6){
+        golfScore = 2
+    }else{
+        golfScore = 0
+    }
     let wordleSolution = {
         word: inputValue,
-        guesses: guessNumber
+        guesses: guessNumber,
+        score: golfScore
     }
     
     push(wordleSolutionInDB, wordleSolution)
