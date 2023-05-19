@@ -44,10 +44,10 @@ onValue(wordleSolutionInDB, function(snapshot) {
             let currentItemID = currentItem[0]
             let currentItemValue = currentItem[1] 
             let wordArray = Object.values(currentItem[1]) 
-            let golfScoreValues = Object.values(currentItem[0])
-            for(let j = 0;j < golfScoreValues.length; j++){
-                let golfScore = ""
-                golfScore += golfScoreValues[j]
+            let wordArrayValues = wordArray[1]
+            let golfScore = 0
+            for(let j = 0;j < wordArrayValues.length; j++){
+                golfScore += wordArrayValues[j]
             }
             golfScore(golfScore)
             appendItemTowordleSolutionEl(wordArray,currentItemID)
