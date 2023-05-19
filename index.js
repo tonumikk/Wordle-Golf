@@ -18,6 +18,7 @@ const birdieListEl = document.getElementById("birdie-list")
 const parListEl = document.getElementById("par-list")
 const bogeyListEl = document.getElementById("bogey-list")
 const dblbogeyListEl = document.getElementById("dblbogey-list")
+const golfScoreEl = document.getElementById("golf-score")
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
@@ -92,4 +93,11 @@ function appendItemTowordleSolutionEl(item,itemIDInDB) {
     }else{
     wordleSolutionEl.append(newEl)
     }
+    
+    golfScore()
+}
+
+function golfScore(){
+    let golfScore = 10
+    golfScoreEl.innerHTML = `Golf score: ${golfScore}` 
 }
