@@ -56,19 +56,15 @@ onValue(wordleSolutionInDB, function(snapshot) {
     
         clearwordleSolutionEl()
         
+        let golfScoreArray = []
         for (let i = 0; i < itemsArray.length; i++) {
             let currentItem = itemsArray[i]
             let currentItemID = currentItem[0]
-            let currentItemValue = currentItem[1] 
             let wordArray = Object.values(currentItem[1]) 
-            let wordArrayValues = wordArray[1]
-            let golfScore = 0
-            for(let j = 0;j < wordArrayValues.length; j++){
-                golfScore += wordArrayValues[j]
-            }
-            addGolfScoreEl(golfScore)
+            golfScoreArray.push(wordArray[1]) 
             appendItemTowordleSolutionEl(wordArray,currentItemID)
         }    
+        calculateGolfScore(golfScoreArray)
     } else {
         wordleSolutionEl.innerHTML = "No items here... yet"
     }
@@ -120,4 +116,12 @@ function appendItemTowordleSolutionEl(item,itemIDInDB) {
     wordleSolutionEl.append(newEl)
     }
     
+}
+
+function calculateGolfScore(valuesArray){
+    let golfScore = 0
+    for (let j = 0; j < valuesArray.length; j++){
+        golfScore += valuesArray[j]
+    }
+    addGolfScoreEl(golfScore)    
 }
