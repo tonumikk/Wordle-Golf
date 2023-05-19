@@ -99,7 +99,6 @@ function appendItemTowordleSolutionEl(item,itemIDInDB) {
     wordleSolutionEl.append(newEl)
     }
     
-    golfScore()
 }
 
 function golfScore(score){
