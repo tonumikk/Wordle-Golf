@@ -19,7 +19,6 @@ const parListEl = document.getElementById("par-list")
 const bogeyListEl = document.getElementById("bogey-list")
 const dblbogeyListEl = document.getElementById("dblbogey-list")
 const golfScoreEl = document.getElementById("golf-score")
-let golfScoreFromDB = 2
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
