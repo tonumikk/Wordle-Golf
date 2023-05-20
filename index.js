@@ -117,7 +117,7 @@ function appendItemTowordleSolutionEl(item,itemIDInDB) {
     }
     
 }
-
+let golfScoreFromDB = 0
 function calculateGolfScore(valuesArray){
     for (let j = 0; j < valuesArray.length; j++){
         golfScoreFromDB += valuesArray[j]
