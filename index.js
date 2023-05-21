@@ -24,17 +24,17 @@ addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
     let guessNumber = guessNumberEl.value
     let golfScore = 0
-    if (guessNumber === 1){
+    if (guessNumber === "1"){
         golfScore = -3
-    }else if(guessNumber === 2){
+    }else if(guessNumber === "2"){
         golfScore = -2
-    }else if(guessNumber === 3){
+    }else if(guessNumber === "3"){
         golfScore = -1
-    }else if(guessNumber === 4){
+    }else if(guessNumber === "4"){
         golfScore = 0
-    }else if(guessNumber === 5){
+    }else if(guessNumber === "5"){
         golfScore = 1
-    }else if(guessNumber === 6){
+    }else if(guessNumber === "6"){
         golfScore = 2
     }else{
         golfScore = 0
@@ -88,13 +88,11 @@ function appendItemTowordleSolutionEl(item,itemIDInDB) {
     let itemID = item[0]
     let itemValue = item[2]
     let itemScore = item[1]
-    addGolfScore(itemScore)
 
     let newEl = document.createElement("li")
     
     newEl.textContent = itemValue
 
-    
     newEl.addEventListener("dblclick", function() {
         let exactLocationOfItemInDB = ref(database, `wordleSolution/${itemIDInDB}`)
         
@@ -117,17 +115,12 @@ function appendItemTowordleSolutionEl(item,itemIDInDB) {
     }
     
 }
-let golfScoreFromDB = 0
 function calculateGolfScore(valuesArray){
+    let golfScoreFromDB = 0
     for (let j = 0; j < valuesArray.length; j++){
         golfScoreFromDB += valuesArray[j]
     }
     addGolfScoreEl(golfScoreFromDB)    
-}
-
-function addGolfScore(addedScore){
-    golfScoreFromDB += addedScore
-    addGolfScoreEl(golfScoreFromDB)
 }
 
 function addGolfScoreEl(score) {
